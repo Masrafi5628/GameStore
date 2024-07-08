@@ -2,3 +2,15 @@ GET http://localhost:5124/games
 
 ###
 GET http://localhost:5124/games/1
+
+###
+POST http://localhost:5124/games
+Content-Type: application/json
+
+{
+    "Name": "Call of Duty",
+    "Genre": "Shooting",
+    "Price": 350,
+    "ReleaseDate": "2005-05-23"
+}
+
