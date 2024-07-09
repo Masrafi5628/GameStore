@@ -41,6 +41,7 @@ app.MapPost("games", (CreateGameDto newGame) =>
 app.MapPut("games/{id}", (int id, UpdateGameDto updatedGame) =>
 { 
     var index = games.FindIndex(game => game.ID == id); // confusion with the game
+    if(index==-1) return Results.NotFound();
     games[index] = new(
         id,
         updatedGame.Name,
