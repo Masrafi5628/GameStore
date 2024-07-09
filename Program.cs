@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using GameStore.Dtos;
 
 // use f5 for debug
@@ -15,7 +16,13 @@ List<GameDto> games = new()
 
 app.MapGet("/", () => "Welcome to the games store....!");
 app.MapGet("games", () => games);
-app.MapGet("games/{id}", (int id) => games.Find(game => game.ID == id)).WithName(getGameEndpoint);
+app.MapGet("games/{id}", (int id) => {
+    GameDto? game=games.Find(game=>game.ID==id);
+    
+    return game is null? Results.NotFound():Results.Ok(game);
+    // games.Find(game => game.ID == id);
+    
+}).WithName(getGameEndpoint);
 
 app.MapPost("games", (CreateGameDto newGame) =>
 {
