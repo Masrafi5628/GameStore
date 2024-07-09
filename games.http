@@ -26,3 +26,6 @@ Content-Type: application/json
     "ReleaseDate": "2000-02-10"
 }
 
+
+###
+DELETE http://localhost:5124/games/1
