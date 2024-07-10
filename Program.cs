@@ -6,6 +6,7 @@ using GameStore.Endpoints;
 var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
+app.MapGet("/", () => "Welcome to the games store....!");
 
 app.MapGameEndpoints();
 
