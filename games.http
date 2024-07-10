@@ -9,7 +9,7 @@ POST http://localhost:5124/games
 Content-Type: application/json
 
 {
-    "Name": "Call of Duty",
+    "Name": "",
     "Genre": "Shooting",
     "Price": 350,
     "ReleaseDate": "2005-05-23"
